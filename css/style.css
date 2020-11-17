@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: url('/img/weather.png') no-repeat center center /cover fixed;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: inherit;
+    height: 100vh;
+}
+
+/* Väder appen start */
+.weather-box {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 650px;
+    border-radius: 5px;
+    background: rgba(158, 203, 214, 0.658);
+}
+
+.title {
+    font-size: 2rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+/* Sök rutan */
+#search-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    width: 30rem;
+}
+
+#input-country {
+    width: 250px;
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+}
+
+#search {
+    width: 200px;
+    margin-top: 10px;
+    border: none;
+    box-shadow: black;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Elementen där din utvalda stad kommer att visas */
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 400px;
+    margin-left: 40px;
+    margin-top: 30px;
+    background: rgba(119, 117, 117, 0.158);
+}
+
+/* De 6 elementen parent */
+.main-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 90px;
+    margin-left: 5px;
+}
+
+/* Ändring av all text */
+h6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 1rem;
+    margin-top: 70px;
+    color: white;
+}
+
+/* Alla 6 element styling */
+.discription {
+    background: rgba(103, 106, 107, 0.658);
+    width: 150px;
+    height: 150px;
+}
+
+.weather-icon {
+    background: rgba(103, 106, 107, 0.658);
+    width: 150px;
+    height: 150px;
+}
+
+.tempration {
+    background: rgba(103, 106, 107, 0.658);
+    width: 150px;
+    height: 150px;
+}
+
+.wind {
+    background: rgba(103, 106, 107, 0.658);
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.humidity {
+    background: rgba(103, 106, 107, 0.658);
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.other {
+    background: rgba(103, 106, 107, 0.658);
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}
