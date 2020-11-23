@@ -28,8 +28,19 @@ formWeather.addEventListener('submit',
         // Skapar en fetch-funktion
         fetch(url).then(
             function(response){
+                // Respons innehåller information om hur det har gått
                 console.log(response);
-                return response.json();
+
+                if(response.status >= 200 && response.status < 300){
+                    return response.json();
+                } else if(response.status === 404){
+                    alert('Staden kunde inte hittas, vänligen försök igen');
+                    throw 'Staden kunde inte hittas, vänligen försök igen';
+                }else if(response.status === 401){
+                    alert('Fel API-nyckel');
+                    throw response.status, 'Fel API-nyckel';
+                }
+                
             }
         ).then(
             function(data){
@@ -71,7 +82,7 @@ formWeather.addEventListener('submit',
                 let timeZone = document.querySelector('.timezone h6');
                 timeZone.innerText = data.timezone;
 
-                //Lägger på en if-statment på tempratur paragrafen. Texten ändrar färg beroende på graderna. 
+                //Lägger på en if-statment på tempratur paragrafen. Texten ändrar färg beroende på graderna i den valda staden.
                 if(tempRound <= 5){
                     temprationText.style.color = 'blue';
                 }else if(tempRound >= 6 && tempRound <= 10){
@@ -91,7 +102,9 @@ formWeather.addEventListener('submit',
         ).catch(
             function(error){
                 // Om staden inte finns kommer ett felmeddelande
+                
                 alert('Staden kunde inte hittas, försök igen');
+                console.log('error');
             }
         )
 }
